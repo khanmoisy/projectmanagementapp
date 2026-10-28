@@ -1,0 +1,20 @@
+{
+  "name": "managementapp",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "db:generate": "pnpm --filter @managementapp/db db:generate",
+    "db:migrate": "pnpm --filter @managementapp/db db:migrate",
+    "db:push": "pnpm --filter @managementapp/db db:push",
+    "db:studio": "pnpm --filter @managementapp/db db:studio"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
