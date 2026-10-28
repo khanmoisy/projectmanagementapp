@@ -1,0 +1,12 @@
+{
+  "extends": "../../packages/config/tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["vinxi/types/client", "vinxi/types/server"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"],
+      "@managementapp/*": ["../../packages/*/src"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "app.config.ts"]
+}
