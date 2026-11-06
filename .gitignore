@@ -42,8 +42,9 @@ Thumbs.db
 coverage
 .nyc_output
 
-# Drizzle
-drizzle
-
 # Misc
 *.tsbuildinfo
+*.timestamp_*.js
+
+# Drizzle (migrations must be committed)
+!packages/db/drizzle

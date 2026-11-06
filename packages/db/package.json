@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@managementapp/types": "workspace:*",
+    "@types/pg": "^8.23.1",
     "drizzle-orm": "^0.38.3",
+    "pg": "^8.23.1",
     "postgres": "^3.4.5"
   },
   "devDependencies": {

@@ -7,3 +7,6 @@ export * from './sonner';
 export * from './select';
 export * from './textarea';
 export * from './table';
+export * from './tabs';
+export * from './badge';
+export * from './avatar';

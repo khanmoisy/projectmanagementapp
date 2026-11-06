@@ -18,7 +18,7 @@ export const createTaskSchema = z.object({
   projectId: z.string().uuid(),
   title: z.string().min(1, 'Title is required').max(200),
   description: z.string().max(1000).optional(),
-  assigneeId: z.string().uuid().optional().nullable(),
+  assigneeId: z.string().optional().nullable(),
   status: taskStatusEnum.optional(),
   priority: taskPriorityEnum.optional(),
   deadline: z.string().datetime().optional().or(z.date().optional()),
@@ -29,7 +29,7 @@ export const updateTaskSchema = createTaskSchema.partial().omit({ projectId: tru
 
 export const addMemberSchema = z.object({
   projectId: z.string().uuid(),
-  userId: z.string().uuid(),
+  userId: z.string(),
   role: projectMemberRoleEnum.default('member'),
 });
 

@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, Button, Input, Label, Textare
 import { useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
+import { createProjectFn } from '~/server/fns/projects';
 
 export const Route = createFileRoute('/projects/new')({
   component: NewProject,
@@ -16,13 +17,7 @@ function NewProject() {
 
   const mutation = useMutation({
     mutationFn: async (data: any) => {
-      const res = await fetch('/api/projects', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error('Failed');
-      return res.json();
+      return await createProjectFn({ data });
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['projects'] });
@@ -38,7 +33,7 @@ function NewProject() {
   };
 
   return (
-    <div className="container mx-auto p-6 max-w-2xl">
+    <div className="max-w-2xl">
       <Card>
         <CardHeader>
           <CardTitle>Create New Project</CardTitle>
